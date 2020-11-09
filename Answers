@@ -1,0 +1,59 @@
+#Question 1
+def  countSetBits(n): 
+    count = 0
+    while (n): 
+        count += n & 1
+        n >>= 1
+    return count 
+
+i = 24
+print(countSetBits(i)) 
+
+#Question 2
+string = "anappleisnotatomato"
+
+def alphabet():
+    letter_dict = dict()
+    current_most_common_letter = string[0]
+    for letter in string:
+        if letter not in letter_dict:
+            letter_dict[letter] = 1
+        else:
+            letter_dict[letter] += 1
+        if letter_dict[letter] > letter_dict[current_most_common_letter]:
+            current_most_common_letter = letter
+    print(current_most_common_letter)
+    return current_most_common_letter
+
+print("The most common letter is " + alphabet()) 
+
+#Question 3
+string = "I have Python exam"
+
+def sent():
+    return len(string.split(' '))
+
+print(sent())
+
+#Question 4
+def print_arguments(function):
+    function = "boba"
+    return function
+
+sent = print_arguments(1)
+print(sent)
+
+def multiply_output(function):
+    function = "bubble " * 2
+    return function 
+
+arg = multiply_output(2)
+print(arg)
+
+def augment_function(function, decorators):
+    return function, decorators
+
+new_function = augment_function(augment_function[print_arguments, multiply_output])
+x = new_function(3,4)
+
+print(x)
